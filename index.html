@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema CRUD</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Importa app.js como módulo -->
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#countries" class="active">Countries</a></li>
+      <li><a href="#regions">Regions</a></li>
+      <li><a href="#cities">Cities</a></li>
+      <li><a href="#companies">Companies</a></li>
+      <li><a href="#branches">Branches</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Countries -->
+    <section id="countries" class="contenido visible">
+      <h2>Registro de Country</h2>
+      <form>
+        <label for="country-name">Nombre Country</label>
+        <input id="country-name" type="text" placeholder="Ej: Colombia">
+
+        <div class="acciones">
+          <button class="btn btn-nuevo" type="button">Nuevo</button>
+          <button class="btn btn-cancelar" type="button">Cancelar</button>
+          <button class="btn btn-guardar" type="submit">Guardar</button>
+          <button class="btn btn-eliminar" type="button">Eliminar</button>
+        </div>
+      </form>
+
+      <h3>Listado de Countries</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Colombia</td>
+            <td>
+              <button class="btn btn-editar">Editar</button>
+              <button class="btn btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <country-component></country-component>
+    </section>
+
+    <!-- Regions -->
+    <section id="regions" class="contenido">
+      <h2>Registro de Región</h2>
+      <form>
+        <label for="region-name">Nombre Región</label>
+        <input id="region-name" type="text" placeholder="Ej: Antioquia">
+
+        <label for="region-country">Country</label>
+        <select id="region-country"></select>
+
+        <div class="acciones">
+          <button class="btn btn-nuevo" type="button">Nuevo</button>
+          <button class="btn btn-cancelar" type="button">Cancelar</button>
+          <button class="btn btn-guardar" type="submit">Guardar</button>
+          <button class="btn btn-eliminar" type="button">Eliminar</button>
+        </div>
+      </form>
+
+      <h3>Listado de Regions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Country</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Antioquia</td>
+            <td>Colombia</td>
+            <td>
+              <button class="btn btn-editar">Editar</button>
+              <button class="btn btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <region-component></region-component>
+    </section>
+
+    <!-- Cities -->
+    <section id="cities" class="contenido">
+      <h2>Registro de City</h2>
+      <form>
+        <label for="city-name">Nombre Ciudad</label>
+        <input id="city-name" type="text" placeholder="Ej: Medellín">
+
+        <label for="city-region">Región</label>
+        <select id="city-region"></select>
+
+        <div class="acciones">
+          <button class="btn btn-nuevo" type="button">Nuevo</button>
+          <button class="btn btn-cancelar" type="button">Cancelar</button>
+          <button class="btn btn-guardar" type="submit">Guardar</button>
+          <button class="btn btn-eliminar" type="button">Eliminar</button>
+        </div>
+      </form>
+
+      <h3>Listado de Cities</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Región</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Medellín</td>
+            <td>Antioquia</td>
+            <td>
+              <button class="btn btn-editar">Editar</button>
+              <button class="btn btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <city-component></city-component>
+    </section>
+
+    <!-- Companies -->
+    <section id="companies" class="contenido">
+      <h2>Registro de Company</h2>
+      <form>
+        <label for="company-name">Nombre Compañía</label>
+        <input id="company-name" type="text" placeholder="Ej: TechCorp">
+
+        <label for="company-email">Email</label>
+        <input id="company-email" type="email" placeholder="Ej: contacto@techcorp.com">
+
+        <label for="company-phone">Teléfono</label>
+        <input id="company-phone" type="tel" placeholder="Ej: +57 3201234567">
+
+        <label for="company-ukniu">UKNiu</label>
+        <input id="company-ukniu" type="text" placeholder="Ej: 123456789">
+
+        <label for="company-address">Dirección</label>
+        <input id="company-address" type="text" placeholder="Ej: Calle 123">
+
+        <label for="company-city">Ciudad</label>
+        <select id="company-city"></select>
+
+        <div class="acciones">
+          <button class="btn btn-nuevo" type="button">Nuevo</button>
+          <button class="btn btn-cancelar" type="button">Cancelar</button>
+          <button class="btn btn-guardar" type="submit">Guardar</button>
+          <button class="btn btn-eliminar" type="button">Eliminar</button>
+        </div>
+      </form>
+
+      <h3>Listado de Companies</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>TechCorp</td>
+            <td>contacto@techcorp.com</td>
+            <td>3201234567</td>
+            <td>
+              <button class="btn btn-editar">Editar</button>
+              <button class="btn btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <companie-component></companie-component>
+    </section>
+
+    <!-- Branches -->
+    <section id="branches" class="contenido">
+      <h2>Registro de Branch (Sucursal)</h2>
+      <form>
+        <label for="branch-number">Número</label>
+        <input id="branch-number" type="text" placeholder="Ej: 001">
+
+        <label for="branch-name">Nombre Comercial</label>
+        <input id="branch-name" type="text" placeholder="Ej: TechCorp Norte">
+
+        <label for="branch-address">Dirección</label>
+        <input id="branch-address" type="text" placeholder="Ej: Cra 10 #20">
+
+        <label for="branch-email">Email</label>
+        <input id="branch-email" type="email" placeholder="Ej: sucursal@empresa.com">
+
+        <label for="branch-phone">Teléfono</label>
+        <input id="branch-phone" type="tel" placeholder="Ej: 3204567890">
+
+        <label for="branch-city">Ciudad</label>
+        <select id="branch-city"></select>
+
+        <label for="branch-company">Compañía</label>
+        <select id="branch-company"></select>
+
+        <div class="acciones">
+          <button class="btn btn-nuevo" type="button">Nuevo</button>
+          <button class="btn btn-cancelar" type="button">Cancelar</button>
+          <button class="btn btn-guardar" type="submit">Guardar</button>
+          <button class="btn btn-eliminar" type="button">Eliminar</button>
+        </div>
+      </form>
+
+      <h3>Listado de Branches</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Número</th>
+            <th>Comercial</th>
+            <th>Dirección</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Ciudad</th>
+            <th>Compañía</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>001</td>
+            <td>TechCorp Norte</td>
+            <td>Cra 10 #20</td>
+            <td>sucursal@empresa.com</td>
+            <td>3204567890</td>
+            <td>Bogotá</td>
+            <td>TechCorp</td>
+            <td>
+              <button class="btn btn-editar">Editar</button>
+              <button class="btn btn-eliminar">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <branch-component></branch-component>
+    </section>
+  </main>
+</body>
+</html>
