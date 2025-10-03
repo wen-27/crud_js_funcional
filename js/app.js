@@ -9,7 +9,6 @@ import './region.js';
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".navbar a");
   const secciones = document.querySelectorAll(".contenido");
-
  
   links.forEach(link => {
     link.addEventListener("click", (e) => {
